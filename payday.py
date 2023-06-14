@@ -1,18 +1,11 @@
 import discord
 from discord.ext import commands
 from discord.ui.item import Item
-from dotenv import load_dotenv
-import os
 
 intents = discord.Intents()
 intents.message_content = True
 
 bot = discord.Bot(command_prefix="/")  # Instantiate the Bot class from the discord module
-
-def main():
-    load_dotenv()  # Load variables from .env file
-    token = os.getenv('DISCORD_TOKEN')
-    # Use the token to start your Discord bot
 
 @bot.event
 async def on_ready():
@@ -73,7 +66,6 @@ class MyView(discord.ui.View):
     async def important(ctx):
         await ctx.respond("Important information", view=MyView()) # Send a message with our View class that contains the button
 
-#Role request 
 class MyView1(discord.ui.View):
     def __init__(self):
         super().__init__()
@@ -143,3 +135,4 @@ async def help(ctx):
     await ctx.respond(embed=embed) # Send the embed with some text
 
 
+bot.run("MTEwOTk5NzE0MTQ5MDkyOTY4NA.GfiCxK.LjbPRZbIB0hlGoIOB-gRnqE5NUYJPlNrkGqdYU")
