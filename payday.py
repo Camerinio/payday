@@ -66,7 +66,7 @@ class MyView(discord.ui.View):
     async def important(ctx):
         await ctx.respond("Important information", view=MyView()) # Send a message with our View class that contains the button
 
-#Role request
+#Role request 
 class MyView1(discord.ui.View):
     def __init__(self):
         super().__init__()
