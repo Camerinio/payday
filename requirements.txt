@@ -43,3 +43,4 @@ types-PyYAML==6.0.12.9
 urllib3==1.26.15
 yarl==1.9.2
 youtube-dl==2021.12.17
+py-cord>=2.0.0a
