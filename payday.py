@@ -5,7 +5,7 @@ from discord.ui.item import Item
 intents = discord.Intents()
 intents.message_content = True
 
-client = discord.client(command_prefix="/")  # Instantiate the client class from the discord module
+client = discord.Client(command_prefix="/")
 
 @client.event
 async def on_ready():
