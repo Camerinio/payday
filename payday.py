@@ -2,6 +2,9 @@ import discord
 from discord.ext import commands
 from discord.ui.item import Item
 
+intents = discord.Intents()
+intents.message_content = True
+
 bot = discord.Bot(command_prefix="/")  # Instantiate the Bot class from the discord module
 
 @bot.event
