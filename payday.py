@@ -16,7 +16,7 @@ async def on_ready():
 async def on_ready():
     await bot.change_presence(status=discord.Status.online, activity=discord.Game("Official Payday Bot"))
 
-@bot.command(description="Sends the bot's latency.") # this decorator makes a slash command
+@bot.slash_command(description="Sends the bot's latency.") # this decorator makes a slash command
 async def ping(ctx): # a slash command will be created with the name "ping"
     await ctx.respond(f"Pong! Latency is {bot.latency}")
 
@@ -102,7 +102,7 @@ async def on_ready():
 async def roles(ctx):
     await ctx.respond("Role request", view=MyView1())
     
-@bot.command(pass_context=True)
+@bot.slash_command(pass_context=True, descirption="About our bot")
 @commands.has_role("Controller")
 async def purge(ctx, limit: int):
     try:
@@ -113,7 +113,7 @@ async def purge(ctx, limit: int):
     except Exception as e:
         await ctx.send(f"An error occurred: {e}")
 
-@bot.command(descirption="The commands that we have")
+@bot.slash_command(descirption="The commands that we have")
 async def help(ctx):
     embed = discord.Embed(
         
