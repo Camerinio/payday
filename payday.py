@@ -21,7 +21,7 @@ async def ping(ctx): # a slash command will be created with the name "ping"
     await ctx.respond(f"Pong! Latency is {bot.latency}")
 
 # Slash Command: Dirty
-@bot.slash_command(descirption="Add 20% to a value which is good for calculating clean cash to dirty")
+@bot.slash_command(description="Add 20% to a value which is good for calculating clean cash to dirty")
 async def dirty(ctx, value: float):
     new_value = value * 1.2
     await ctx.respond(f"The new value is {new_value:.2f}")
@@ -98,7 +98,7 @@ async def on_ready():
     view = MyView1()
     message = await channel.send("React to receive your role.", view=view)
 
-@bot.slash_command()
+@bot.slash_command(descirption="Displays the role request command")
 async def roles(ctx):
     await ctx.respond("Role request", view=MyView1())
     
@@ -113,7 +113,7 @@ async def purge(ctx, limit: int):
     except Exception as e:
         await ctx.send(f"An error occurred: {e}")
 
-@bot.command()
+@bot.command(descirption="The commands that we have")
 async def help(ctx):
     embed = discord.Embed(
         
