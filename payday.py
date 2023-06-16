@@ -11,6 +11,7 @@ bot = discord.Bot(command_prefix="/")  # Instantiate the Bot class from the disc
 async def on_ready():
     print(f'Logged in as {bot.user.name} ({bot.user.id})')
     print('------')
+    await bot.change_presence(status=discord.Status.online, activity=discord.Game("Official Payday Bot"))
 
 @bot.command(description="Sends the bot's latency.") # this decorator makes a slash command
 async def ping(ctx): # a slash command will be created with the name "ping"
