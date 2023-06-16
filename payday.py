@@ -94,7 +94,6 @@ class MyView1(discord.ui.View):
 async def on_ready():
     # Get the desired channel where you want to send the message
     channel = bot.get_channel(1102730487379808326)
-
     # Send the message with your view class
     view = MyView1()
     message = await channel.send("React to receive your role.", view=view)
