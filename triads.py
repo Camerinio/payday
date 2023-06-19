@@ -75,6 +75,3 @@ async def help(ctx):
     embed.set_image(url="https://i.imgur.com/6zMSFoM.png")
  
     await ctx.respond(embed=embed) # Send the embed with some text")
-
-    
-bot2.run("MTEyMDA5ODAzNzI4MTMzMzM4OA.GOsraR.oNlbITGHy3PZ40pkjaEPY8fYnaFX_9jtjbphqU")
