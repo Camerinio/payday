@@ -12,18 +12,19 @@ async def on_ready():
     print(f'Logged in as {bot.user.name} ({bot.user.id})')
     print('------')
 
-@bot.event
-async def on_ready():
-    await bot.change_presence(status=discord.Status.online, activity=discord.Game("Official Payday Bot"))
-
 @bot.slash_command(description="Sends the bot's latency.") # this decorator makes a slash command
 async def ping(ctx): # a slash command will be created with the name "ping"
     await ctx.respond(f"Pong! Latency is {bot.latency}")
 
-# Slash Command: Dirty
+#Start of clean/dirty
 @bot.slash_command(description="Add 20% to a value which is good for calculating clean cash to dirty")
 async def dirty(ctx, value: float):
     new_value = value * 1.2
+    await ctx.respond(f"The new value is {new_value:.2f}")
+
+@bot.slash_command(description="Remove 20% to a value which is good for calculating dirty to clean cash")
+async def dirty(ctx, value: float):
+    new_value = value / 1.2
     await ctx.respond(f"The new value is {new_value:.2f}")
 
 # Command: Prices
@@ -32,6 +33,7 @@ async def prices(ctx):
     response = "**Thermal:** 40-60k\n**Thermite:** 15-20k\n**Level 3 Access Card:** 25-35k\n**Level 6 Access Card:** 40-60k\n"
     await ctx.respond(response)
 
+#Maths
 @bot.slash_command(description="adds two values")
 async def sum(ctx, a: int, b: int):
   await ctx.respond(a + b)
@@ -47,7 +49,8 @@ async def minus(ctx, a: int, b: int):
 @bot.slash_command(description="divides two values")
 async def divide(ctx, a: int, b: int):
   await ctx.respond(a / b)
-  
+
+#Important 
 class MyView(discord.ui.View):
     def __init__(self):
        super().__init__()
@@ -102,7 +105,7 @@ async def on_ready():
 async def roles(ctx):
     await ctx.respond("Role request", view=MyView1())
     
-@bot.slash_command(pass_context=True, descirption="About our bot")
+@bot.slash_command(pass_context=True, descirption="Purge an amount of messages")
 @commands.has_role("Controller")
 async def purge(ctx, limit: int):
     try:
