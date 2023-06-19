@@ -23,7 +23,7 @@ async def dirty(ctx, value: float):
     await ctx.respond(f"The new value is {new_value:.2f}")
 
 @bot.slash_command(description="Remove 20% to a value which is good for calculating dirty to clean cash")
-async def dirty(ctx, value: float):
+async def clean(ctx, value: float):
     new_value = value / 1.2
     await ctx.respond(f"The new value is {new_value:.2f}")
 
