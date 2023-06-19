@@ -1,1 +1,1 @@
-worker: python payday.py
+worker: python index.py
