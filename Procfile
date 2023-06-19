@@ -1,1 +1,1 @@
-worker: python payday.py
+worker: python payday.py, python triads.py
